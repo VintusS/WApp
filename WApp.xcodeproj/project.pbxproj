@@ -10,9 +10,22 @@
 		712FFC3A2D5CA6D0004B6DBA /* WApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		712FFC592D5CBBBF004B6DBA /* Exceptions for "WApp" folder in "WApp" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			assetTagsByRelativePath = {
+				Managers/APIKeys.json = (APIKey, );
+			};
+			target = 712FFC392D5CA6D0004B6DBA /* WApp */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		712FFC3C2D5CA6D0004B6DBA /* WApp */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				712FFC592D5CBBBF004B6DBA /* Exceptions for "WApp" folder in "WApp" target */,
+			);
 			path = WApp;
 			sourceTree = "<group>";
 		};
@@ -77,6 +90,9 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
+				KnownAssetTags = (
+					APIKey,
+				);
 				LastSwiftUpdateCheck = 1620;
 				LastUpgradeCheck = 1620;
 				TargetAttributes = {
@@ -266,6 +282,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				ON_DEMAND_RESOURCES_INITIAL_INSTALL_TAGS = APIKey;
 				PRODUCT_BUNDLE_IDENTIFIER = com.vintuss.WApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -296,6 +313,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				ON_DEMAND_RESOURCES_INITIAL_INSTALL_TAGS = APIKey;
 				PRODUCT_BUNDLE_IDENTIFIER = com.vintuss.WApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
