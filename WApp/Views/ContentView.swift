@@ -9,43 +9,37 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject var locationManager = LocationManager()
-    
-    @State private var keys: String = ""
+    var weatherManager = WeatherManager()
+    @State var weather: ResponseBody?
     
     var body: some View {
         VStack {
-            Button {
-                showKeys()
-            } label: {
-                Text("Show keys")
-                    .foregroundStyle(.white)
+            if let location = locationManager.location {
+                if let weather = weather {
+                    Text("weather data fetched")
+                } else {
+                    LoadingView()
+                        .task {
+                            do {
+                               weather = try await weatherManager.getCurrentWeather(latitude: location.latitude, longitude: location.longitude)
+                            } catch {
+                                print("Error getting weather: \(error)")
+                            }
+                        }
+                }
+            } else {
+                if locationManager.isLoading {
+                    LoadingView()
+                } else {
+                    WelcomeView()
+                        .environmentObject(locationManager)
+                }
             }
-            .buttonStyle(.bordered)
-            Text("Keys: \(keys)")
-                .foregroundStyle(.white)
-            
-//            if let location = locationManager.location {
-//                Text("testing coordinates: \(location.latitude), \(location.longitude)")
-//            } else {
-//                if locationManager.isLoading {
-//                    LoadingView()
-//                } else {
-//                    WelcomeView()
-//                        .environmentObject(locationManager)
-//                }
-//            }
         }
         .padding()
         .preferredColorScheme(.dark)
         .ignoresSafeArea(edges: .all)
         .background(Color.blue.opacity(0.5))
-    }
-    
-    func showKeys() {
-        keys = """
-                \(KeyConstant.APIKeys.testKey)
-                \(KeyConstant.APIKeys.prodKey)
-                """
     }
     
 }
