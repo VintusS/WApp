@@ -16,5 +16,5 @@ struct WeatherView: View {
 }
 
 #Preview {
-    WeatherView(weather: ResponseBody())
+    WeatherView(weather: previewWeather)
 }
