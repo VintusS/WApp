@@ -66,6 +66,9 @@ DerivedData/
 *.dSYM.zip
 *.dSYM
 
+# Ignore API Keys
+WApp/Managers/APIKeys.json
+
 ## Playgrounds
 timeline.xctimeline
 playground.xcworkspace
