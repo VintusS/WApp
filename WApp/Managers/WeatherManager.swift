@@ -10,11 +10,9 @@ import CoreLocation
 
 class WeatherManager {
     private let apiKey = KeyConstant.APIKeys.prodKey
-    
     func getCurrentWeather(latitude: CLLocationDegrees, longitude: CLLocationDegrees) async throws -> ResponseBody{
-        guard let url = URL(string: "https://api.openweathermap.org/data/3.0/onecall?lat=\(latitude)&lon=\(longitude)&appid=\(apiKey)&units=metric") else { fatalError("Missing url") }
-        print(apiKey)
-        print(url)
+        guard let url = URL(string:        "https://api.openweathermap.org/data/2.5/weather?lat=\(latitude)&lon=\(longitude)&appid=\(apiKey)&units=metric")
+        else { fatalError("Missing url") }
         
         let urlRequest = URLRequest(url: url)
         
