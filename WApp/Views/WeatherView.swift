@@ -13,6 +13,8 @@ struct WeatherView: View {
     var body: some View {
         ZStack(alignment: .leading) {
             VStack {
+                Spacer()
+                    .frame(height: 20)
                 VStack(alignment: .leading, spacing: 5) {
                     Text(weather.name)
                         .bold()

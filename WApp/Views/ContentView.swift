@@ -42,7 +42,7 @@ struct ContentView: View {
                 }
             }
         }
-        .padding()
+        .padding(.top)
         .preferredColorScheme(.dark)
         .ignoresSafeArea(edges: .all)
         .background(Color.blue.opacity(0.5))
